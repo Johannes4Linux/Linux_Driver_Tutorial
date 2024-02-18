@@ -24,11 +24,11 @@ static wait_queue_head_t waitqueue;
 /**
  * @brief Interrupt service routine is called, when interrupt is triggered
  */
-static irq_handler_t gpio_irq_poll_handler(unsigned int irq, void *dev_id, struct pt_regs *regs) {
+static irqreturn_t gpio_irq_poll_handler(int irq, void *dev_id) {
 	printk("gpio_irq_poll: Interrupt was triggered and ISR was called!\n");
 	irq_ready = 1;
 	wake_up(&waitqueue);
-	return (irq_handler_t) IRQ_HANDLED; 
+	return IRQ_HANDLED;
 }
 
 /**
@@ -75,7 +75,7 @@ static int __init ModuleInit(void) {
 	/* Setup the interrupt */
 	irq_number = gpio_to_irq(17);
 
-	if(request_irq(irq_number, (irq_handler_t) gpio_irq_poll_handler, IRQF_TRIGGER_RISING, "my_gpio_irq_poll", NULL) != 0){
+	if(request_irq(irq_number, gpio_irq_poll_handler, IRQF_TRIGGER_RISING, "my_gpio_irq_poll", NULL) != 0){
 		printk("Error!\nCan not request interrupt nr.: %d\n", irq_number);
 		gpio_free(17);
 		return -1;
