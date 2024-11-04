@@ -1,4 +1,4 @@
-# 01_hello
+# 02_better_hello
 
 An improved hello World Linux Kernel Module.
 
