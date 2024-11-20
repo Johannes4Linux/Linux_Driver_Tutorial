@@ -18,8 +18,9 @@ You also need the build utils (make, gcc, ...) but they come preinstalled on Ras
 ## Content
 
 In this repo you can find examples for:
-1. Simple Kernel Module
-
+1. Simple Hello World Kernel Module
+2. An improved Hello World Linux Kernel Module
+3. An example for using GPIOs in a driver without device tree
 
 ## More Information
 
