@@ -7,7 +7,7 @@ static struct gpio_desc *led, *button;
 #define IO_LED 21
 #define IO_BUTTON 20
 
-#define IO_OFFSET 512
+#define IO_OFFSET 0
 
 static int __init my_init(void)
 {
@@ -15,25 +15,25 @@ static int __init my_init(void)
 
 	led = gpio_to_desc(IO_LED + IO_OFFSET);
 	if (!led) {
-		printk("gpioctrl - Error getting pin 21\n");
+		printk("gpioctrl - Error getting pin %d\n", IO_LED);
 		return -ENODEV;
 	}
 
 	button = gpio_to_desc(IO_BUTTON + IO_OFFSET);
 	if (!button) {
-		printk("gpioctrl - Error getting pin 20\n");
+		printk("gpioctrl - Error getting pin %d\n", IO_BUTTON);
 		return -ENODEV;
 	}
 
 	status = gpiod_direction_output(led, 0);
 	if (status) {
-		printk("gpioctrl - Error setting pin 20 to output\n");
+		printk("gpioctrl - Error setting pin %d to output\n", IO_LED);
 		return status;
 	}
 
 	status = gpiod_direction_input(button);
 	if (status) {
-		printk("gpioctrl - Error setting pin 21 to input\n");
+		printk("gpioctrl - Error setting pin %d to input\n", IO_BUTTON);
 		return status;
 	}
 
