@@ -22,6 +22,7 @@ In this repo you can find examples for:
 2. An improved Hello World Linux Kernel Module
 3. An example for using GPIOs in a driver without device tree
 4. Some info about Device Files, Device Numbers, Block and Character Devices
+5. Create a Character Device in a Driver
 
 ## More Information
 

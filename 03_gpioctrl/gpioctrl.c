@@ -7,7 +7,7 @@ static struct gpio_desc *led, *button;
 #define IO_LED 21
 #define IO_BUTTON 20
 
-#define IO_OFFSET 0
+#define IO_OFFSET 512
 
 static int __init my_init(void)
 {
