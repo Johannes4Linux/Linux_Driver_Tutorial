@@ -4,7 +4,7 @@
 static int __init my_init(void)
 {
 	printk(KERN_INFO "log_level - This is an info\n");
-	printk(KERN_WARNING "log_level - This is an irningnfo\n");
+	printk(KERN_WARNING "log_level - This is an information\n");
 	printk(KERN_ALERT "log_level - This is an alert\n");
 	printk(KERN_DEBUG "log_level - Debug: %d\n", 42);
 	return 0;
