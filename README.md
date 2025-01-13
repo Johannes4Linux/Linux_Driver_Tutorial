@@ -23,6 +23,7 @@ In this repo you can find examples for:
 3. An example for using GPIOs in a driver without device tree
 4. Some info about Device Files, Device Numbers, Block and Character Devices
 5. Create a Character Device in a Driver
+6. Linux Kernel log levels
 
 ## More Information
 
