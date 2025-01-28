@@ -24,6 +24,7 @@ In this repo you can find examples for:
 4. Some info about Device Files, Device Numbers, Block and Character Devices
 5. Create a Character Device in a Driver
 6. Linux Kernel log levels
+7. Implement open and release functions for character devices
 
 ## More Information
 
