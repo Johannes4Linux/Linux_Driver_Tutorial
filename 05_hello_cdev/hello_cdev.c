@@ -6,7 +6,7 @@ static int major;
 
 static ssize_t my_read(struct file *f, char __user *u, size_t l, loff_t *o)
 {
-	printk("hello_cdev - Read is called\n");
+	pr_info("hello_cdev - Read is called\n");
 	return 0;
 }
 
@@ -19,7 +19,7 @@ static int __init my_init(void)
 {
 	major = register_chrdev(0, "hello_cdev", &fops);
 	if (major < 0) {
-		printk("hello_cdev - Error registering chrdev\n");
+		pr_err("hello_cdev - Error registering chrdev\n");
 		return major;
 	}
 	printk("hello_cdev - Major Device Number: %d\n", major);
