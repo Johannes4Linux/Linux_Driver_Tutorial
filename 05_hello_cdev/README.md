@@ -24,7 +24,7 @@ If the return value is negative an error occured during the registration of the 
 In the exit function we have to delete the Character Device and free the Device Number. This can be done with:
 
 ~~~
-void register_chrdev(unsigned int major, const char *name);
+void unregister_chrdev(unsigned int major, const char *name);
 ~~~
 
 ## Testing the code
