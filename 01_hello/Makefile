@@ -1,6 +1,5 @@
-obj-m += hello.o
+SRCS=hello.c
+KMOD=hello
 
-all:
-	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
-clean:
-	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
+.include <bsd.kmod.mk>
+

@@ -1,18 +1,38 @@
-#include <linux/module.h>
-#include <linux/init.h>
+#include <sys/types.h>
+#include <sys/errno.h>
+#include <sys/param.h>
+#include <sys/module.h>
+#include <sys/kernel.h>
+#include <sys/systm.h>
 
-int my_init(void)
+static int loader(struct module *module, int what, void *arg)
 {
-	printk("hello - Hello, Kernel!\n");
-	return 0;
+        int error = 0;
+
+        switch(what) {
+                case MOD_LOAD:
+                        printf("Module loaded into FreeBSD kernel\n");
+                        break;
+                case MOD_UNLOAD:
+                        printf("Module removed from the FreeBSD kernel\n");
+                        break;
+                default:
+                        error = EOPNOTSUPP;
+                        break;
+        }
+        return(error);
 }
 
-void my_exit(void)
-{
-	printk("hello - Goodbye, Kernel!\n");
-}
+static moduledata_t mod = {
+        "hello",
+        loader,
+        NULL
+};
 
-module_init(my_init);
-module_exit(my_exit);
+DECLARE_MODULE(hello, mod, SI_SUB_KLD, SI_ORDER_ANY);
+jholloway@BSD-PI4:~/01_hello $ cat Makefile 
+SRCS=hello.c
+KMOD=hello
 
-MODULE_LICENSE("GPL");
+.include <bsd.kmod.mk>
+
