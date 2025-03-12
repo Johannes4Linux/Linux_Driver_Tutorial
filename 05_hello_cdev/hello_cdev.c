@@ -22,7 +22,7 @@ static int __init my_init(void)
 		pr_err("hello_cdev - Error registering chrdev\n");
 		return major;
 	}
-	printk("hello_cdev - Major Device Number: %d\n", major);
+	pr_info("hello_cdev - Major Device Number: %d\n", major);
 	return 0;
 }
 

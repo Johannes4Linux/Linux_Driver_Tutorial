@@ -26,6 +26,7 @@ In this repo you can find examples for:
 6. Linux Kernel log levels
 7. Implement open and release functions for character devices
 8. Implement read and write functions for character devices
+9. Create a Character Device in a Driver manually
 
 ## More Information
 
