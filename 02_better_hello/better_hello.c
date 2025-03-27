@@ -40,7 +40,7 @@ static int load_metadata(void) {
 
     SYSCTL_ADD_STRING(&sysctl_ctx, SYSCTL_CHILDREN(sysctl_tree),
                       OID_AUTO, "license", CTLFLAG_RD,
-                      "BSD", 0, "Module license");
+                      "GPL", 0, "Module license");
 
     SYSCTL_ADD_STRING(&sysctl_ctx, SYSCTL_CHILDREN(sysctl_tree),
                       OID_AUTO, "version", CTLFLAG_RD,
