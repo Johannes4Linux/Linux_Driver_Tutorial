@@ -66,6 +66,7 @@ For cleaning up, the cdev must be deleted and the device number must be freed. T
 ~~~
 void cdev_del(struct cdev *my_cdev);
 void unregister_chrdev_region(dev_t from, unsigned int count);
+~~~
 
 ## Testing the code
 

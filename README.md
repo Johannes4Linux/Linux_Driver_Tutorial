@@ -27,6 +27,7 @@ In this repo you can find examples for:
 7. Implement open and release functions for character devices
 8. Implement read and write functions for character devices
 9. Create a Character Device in a Driver manually
+10. Automatically create a Device File within the driver
 
 ## More Information
 
