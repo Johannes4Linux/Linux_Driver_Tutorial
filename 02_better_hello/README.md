@@ -1,4 +1,4 @@
-# 01_hello (FreeBSD version)
+# 02 better_hello (FreeBSD version)
 
 A simple hello world style FreeBSD kernel module.
 
