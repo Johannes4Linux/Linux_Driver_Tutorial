@@ -6,19 +6,19 @@ This example can be compiled and run on a Raspberry Pi running FreeBSD or on an 
 
 ## Commands to manage the module
 
-Follow the kernel's log for new lines (recommended to do so in a seperate terminal or tmux)
+Follow the kernel's log for new lines (recommended to do so in a separate terminal or tmux)
 ```shell
 $ tail -F /var/log/messages
 ```
 
 Loading the kernel module
 ```shell
-$ sudo kldload ./hello.ko
+# kldload ./hello.ko
 ```
 
 Unloading the kernel module
 ```shell
-$ sudo kldunload ./hello.ko
+# kldunload ./hello.ko
 ```
 
 ## Cross Compiling From x86 FreeBSD to AArch64 FreeBSD
@@ -26,21 +26,15 @@ $ sudo kldunload ./hello.ko
 It is possible to cross compile the kernel module from an x86 version of FreeBSD to the Raspberry Pi version. Edit your Makefile as follows:
 
 ```Make
-KMOD=hello_from_x86
-
-SRCS=hello_from_x86.c
-
+KMOD=hello
+SRCS=hello.c
 
 CC=clang --target=aarch64-unknown-freebsd
 
-
 CFLAGS+= -I/usr/src/sys/arm64/include
 
-
 MACHINE_ARCH=aarch64
-
 MACHINE=arm64
-
 
 .include <bsd.kmod.mk>
 ```
