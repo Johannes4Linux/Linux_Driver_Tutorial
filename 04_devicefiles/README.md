@@ -19,9 +19,11 @@ The letter **c** at the beginning of the of the permissions indicated that the d
 
 FreeBSD only uses character devices, having removed block devices by FreeBSD 5.0. The decision to do so was because the developers found block devices redundant as buffering and caching logic could be handled by the kernel. Leaving block devices in the system would have caused relability problems, as explained by the FreeBSD handbook:
 
-````
+```
 Other UNIX® systems may support a second type of disk device known as block devices. Block devices are disk devices for which the kernel provides caching. This caching makes block-devices almost unusable, or at least dangerously unreliable. The caching will reorder the sequence of write operations, depriving the application of the ability to know the exact disk contents at any one instant in time.
-``` [^1]
+```
+
+[^1]
 
 ## Device Numbers
 
@@ -32,7 +34,7 @@ If we want to separate the major and minor number we can use the `stat -f` with 
 ```shell
 $ stat -f "Major: %Hr, Minor: %Lr" /dev/cuau0
 Major: 0, Minor: 49
-````
+```
 
 The "%Hr" and "%Lr" in the escape sequence tell stat to format the response, with the higher part of the hex code being formatted into the string after the word "Major: " and the lower part of the hex formatted after "Minor: ".
 
