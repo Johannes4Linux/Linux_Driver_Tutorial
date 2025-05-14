@@ -35,7 +35,7 @@ static ssize_t my_read(struct file *filp, char __user *user_buf, size_t len, lof
 
 	pr_info("hello_cdev - Read is called, we want to read %ld bytes, but actually only copying %d bytes. The offset is %lld\n", len, to_copy, *off);
 
-	if (*off >= sizeof(text))
+	if (*off >= MEMSIZE)
 		return 0;
 
 	not_copied = copy_to_user(user_buf, &text[*off], to_copy);
@@ -55,7 +55,7 @@ static ssize_t my_write(struct file *filp, const char __user *user_buf, size_t l
 
 	pr_info("hello_cdev - Write is called, we want to write %ld bytes, but actually only copying %d bytes. The offset is %lld\n", len, to_copy, *off);
 
-	if (*off >= sizeof(text))
+	if (*off >= MEMSIZE)
 		return 0;
 
 	not_copied = copy_from_user(&text[*off], user_buf, to_copy);
@@ -66,9 +66,6 @@ static ssize_t my_write(struct file *filp, const char __user *user_buf, size_t l
 	*off += delta;
 	return delta;
 }
-
-
-
 
 static struct file_operations fops = {
 	.read = my_read,
