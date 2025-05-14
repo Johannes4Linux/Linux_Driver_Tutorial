@@ -28,6 +28,7 @@ In this repo you can find examples for:
 8. Implement read and write functions for character devices
 9. Create a Character Device in a Driver manually
 10. Automatically create a Device File within the driver
+11. Dynamical memory allocation and private data in the `struct file`
 
 ## More Information
 

@@ -1,6 +1,6 @@
-# 09_manual_cdev
+# 10_auto_devfile
 
-Unitl now, we have created device files over the shell command `mknod`. In this lecture I will show you how to create the device file from within the kernel module with a little bit of help from udev, the Linux Device Manager.
+Until now, we have created device files over the shell command `mknod`. In this lecture I will show you how to create the device file from within the kernel module with a little bit of help from udev, the Linux Device Manager.
 
 This example can be compiled and run on a Raspberry Pi or a normal x86 computer.
 
