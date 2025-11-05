@@ -31,6 +31,7 @@ In this repo you can find examples for:
 11. Dynamical memory allocation and private data in the `struct file`
 12. First introduction to `ioctl`
 13. Implementing `ioctl` properly
+14. The device tree
 
 ## More Information
 
