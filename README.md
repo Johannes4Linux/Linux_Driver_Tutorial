@@ -8,9 +8,16 @@ I used a Raspberry Pi 3 to develop and test my modules and drivers. To compile t
 
 ```bash
 sudo apt update && sudo apt upgrade -y
+
+# On older OS versions, the headers are called raspberrypi-kernel-headers
 sudo apt install raspberrypi-kernel-headers
+
+# On newer OS versions, they are named linux-headers-rpi-v8
+sudo apt install linux-headers-rpi-v8
+
 reboot
 ```
+
 Raspberry Pi OS is only installs the latest kernel headers. So, make sure, you are running the latest kernel.
 
 You also need the build utils (make, gcc, ...) but they come preinstalled on Raspberry Pi OS.
