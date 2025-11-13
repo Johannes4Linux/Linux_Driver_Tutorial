@@ -36,6 +36,11 @@ modules.builtin
 *.json
 
 #
+# Device Tree artifacts
+#
+*.dtbo
+
+#
 # Top-level generic files
 #
 /tags

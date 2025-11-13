@@ -32,6 +32,7 @@ In this repo you can find examples for:
 12. First introduction to `ioctl`
 13. Implementing `ioctl` properly
 14. The device tree
+15. Adding a device over the device tree
 
 ## More Information
 
