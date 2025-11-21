@@ -33,6 +33,7 @@ In this repo you can find examples for:
 13. Implementing `ioctl` properly
 14. The device tree
 15. Adding a device over the device tree
+16. A Device Tree Device Driver
 
 ## More Information
 
