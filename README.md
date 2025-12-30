@@ -35,6 +35,7 @@ In this repo you can find examples for:
 15. Adding a device over the device tree
 16. A Device Tree Device Driver
 17. Parsing parameters of a Device Tree Device Driver
+18. Writing to the kernel's log with device information
 
 ## More Information
 

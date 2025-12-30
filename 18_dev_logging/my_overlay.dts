@@ -1,0 +1,20 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+	fragment@0 {
+		target-path = "/";
+		__overlay__ {
+			my_dev_label: my_device {
+				compatible = "brightlight,mydev";
+				status = "okay";
+				string_var = "Hello, DT!";
+				int_var = <123>;
+			};
+			my_dev2@12345678 {
+				compatible = "brightlight,mydev";
+				status = "okay";
+			};
+		};
+	};
+};
