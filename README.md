@@ -38,6 +38,7 @@ In this repo you can find examples for:
 18. Writing to the kernel's log with device information
 19. Using GPIOs in a Device Tree Device Driver
 20. Allocating and using device data
+21. Miscellaneous devices for easy device files
 
 ## More Information
 
