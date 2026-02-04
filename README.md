@@ -39,6 +39,7 @@ In this repo you can find examples for:
 19. Using GPIOs in a Device Tree Device Driver
 20. Allocating and using device data
 21. Miscellaneous devices for easy device files
+22. Adding a misc device to the platform device driver
 
 ## More Information
 

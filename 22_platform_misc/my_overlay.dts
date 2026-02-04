@@ -1,0 +1,16 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+	fragment@0 {
+		target-path = "/";
+		__overlay__ {
+			my_dev_label: my_device {
+				compatible = "brightlight,mydev";
+				status = "okay";
+				led-gpio = <&gpio 21 0>;
+				button-gpio = <&gpio 20 0>;
+			};
+		};
+	};
+};
