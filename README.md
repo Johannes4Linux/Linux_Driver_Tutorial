@@ -41,6 +41,7 @@ In this repo you can find examples for:
 21. Miscellaneous devices for easy device files
 22. Adding a misc device to the platform device driver
 23. Using GPIO interrupts in a platform device driver
+24. Accessing memory mapped IO from a platform device driver
 
 ## More Information
 
