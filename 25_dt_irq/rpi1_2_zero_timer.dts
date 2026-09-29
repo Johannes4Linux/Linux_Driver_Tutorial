@@ -1,0 +1,20 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+	fragment@0 {
+		target-path = "/";
+
+		__overlay__ {
+			#address-cells = <1>;
+			#size-cells = <1>;
+
+			my_timer@2000b400 {
+				compatible = "arm,my_timer";
+				status = "okay";
+				reg = <0x00 0x2000b400 0x40>;
+				interrupts = <0x00 0x00>;
+			};
+		};
+	};
+};

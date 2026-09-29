@@ -5,10 +5,10 @@
 	fragment@0 {
 		target-path = "/";
 
-		#address-cells = <1>;
-		#size-cells = <1>;
-
 		__overlay__ {
+			#address-cells = <1>;
+			#size-cells = <1>;
+
 			my_timer@2000b400 {
 				compatible = "arm,my_timer";
 				status = "okay";
