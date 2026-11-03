@@ -22,15 +22,15 @@ Let's add two device attributes to our platform device and control an LED and re
 
 Let's implement the `button_show` callback which will be invoked when reading from the device attribute. The function returns the amount of bytes which were read. The first argument is a pointer to the device belonging to the device attribute. The second one a pointer to the device attribute. The last argument is a string in which the driver callback will write the data which will be read by the userspace. There is no argument specifying the size of the string because the size is fixed to `PAGE_SIZE` amount of bytes. On Linux a page is typically 4kB in size.
 
-Now we need to retrieve the driver's device data which was set in the probe function and contains pointers to the LED and buttons GPIOs. With `to_platfom_device` we get the `platform_device` pointer from the device pointer. Then we can retrieve the driver`device data with `platform_get_drvdata`.
+Now we need to retrieve the driver's device data which was set in the probe function and contains pointers to the LED and buttons GPIOs. With `to_platform_device` we get the `platform_device` pointer from the device pointer. Then we can retrieve the driver's device data with `platform_get_drvdata`.
 
 For reading in the state of the button, a function of the GPIOD API is used. 
 
-`sysfs_emit` is a function which formats the output string. It allows us to use `printf` like formating and returns the length of the formated string.
+`sysfs_emit` is a function which formats the output string. It allows us to use `printf` like formatting and returns the length of the formatted string.
 
 ## store callback for the LED
 
-The store callback `led_store` has the same first two arguments. But as the data is written from userspace to kernelspace, the string is now a constant and the last argument specifies the amount of bytes written to the device attribute. The return value is the amount of bytes sucessfully written.
+The store callback `led_store` has the same first two arguments. But as the data is written from userspace to kernelspace, the string is now a constant and the last argument specifies the amount of bytes written to the device attribute. The return value is the amount of bytes successfully written.
 
 ## Device attribute macros
 
@@ -40,7 +40,7 @@ To create device attributes, the following macros are available:
 - `DEVICE_ATTR_WO`: Creates a write only device attribute
 - `DEVICE_ATTR_RW`: Creates a read- and writable device attribute
 
-Let's take a look at the macro `DEVICE_ATTR_RO(button)`. This gets expaned to the following:
+Let's take a look at the macro `DEVICE_ATTR_RO(button)`. This gets expanded to the following:
 
 ~~~
 struct device_attribute dev_attr_button = {
@@ -53,7 +53,7 @@ So, a device attribute with the name `dev_attr_button` is created. The permissio
 
 ## Adding & removing the device attributes
 
-The function `device_create_file` adds a device attriute (second argument) to a device (first argument). In the probe function of the platform device, we add the two attributes `dev_attr_button` and `dev_attr_led`. The function returns zero on success, a negative error code else.
+The function `device_create_file` adds a device attribute (second argument) to a device (first argument). In the probe function of the platform device, we add the two attributes `dev_attr_button` and `dev_attr_led`. The function returns zero on success, a negative error code else.
 
 In the remove function, `device_remove_file` is called to remove the device attributes.
 
