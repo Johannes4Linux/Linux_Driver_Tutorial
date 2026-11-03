@@ -43,6 +43,7 @@ In this repo you can find examples for:
 23. Using GPIO interrupts in a platform device driver
 24. Accessing memory mapped IO from a platform device driver
 25. Using a chip internal IRQ in a platform device driver
+26. sysfs device attributes as an interface between driver and userspace
 
 ## More Information
 
